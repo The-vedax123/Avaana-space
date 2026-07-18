@@ -50,6 +50,16 @@ npm run dev:web
 - API docs (Swagger UI): `http://localhost:4000/api/docs`
 - Web app: `http://localhost:5173`
 
+### Quality checks
+
+```bash
+npm run lint      # ESLint across web + api (flat config)
+npm test          # API integration tests (node:test)
+npm run build     # Production build of the web app
+```
+
+CI runs lint → tests → build on every push and pull request (`.github/workflows/ci.yml`).
+
 ### Demo accounts
 
 Password for all: `Password123!`
