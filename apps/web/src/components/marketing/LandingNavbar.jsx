@@ -53,7 +53,7 @@ export function LandingNavbar() {
         <nav
           aria-label="Main navigation"
           className={`hidden items-center gap-5 text-[13px] font-medium lg:flex xl:gap-7 ${
-            lightSurface ? 'text-slate-600 dark:text-slate-200' : 'text-white/85'
+            lightSurface ? 'text-slate-600 dark:text-slate-200' : 'text-white/[0.85]'
           }`}
         >
           {navigation.map((item) => (
@@ -78,7 +78,7 @@ export function LandingNavbar() {
                 : 'text-white hover:bg-white/10'
             }`}
           >
-            {theme === 'dark' ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
+            {theme === 'dark' ? <Sun className="h-[18px] w-[18px]" /> : <Moon className="h-[18px] w-[18px]" />}
           </button>
 
           <div className="hidden items-center gap-2 md:flex">

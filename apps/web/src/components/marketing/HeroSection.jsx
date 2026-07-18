@@ -98,7 +98,7 @@ function HeroStats() {
       className="mt-8 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-white/20 pt-6 sm:grid-cols-4"
     >
       {heroStats.map(({ icon: Icon, label }) => (
-        <li key={label} className="flex items-center gap-2 text-xs font-medium text-white/78">
+        <li key={label} className="flex items-center gap-2 text-xs font-medium text-white/[0.78]">
           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-200 ring-1 ring-white/15 backdrop-blur-sm">
             <Icon className="h-4 w-4" aria-hidden="true" />
           </span>
@@ -162,7 +162,7 @@ export function HeroSection() {
           <motion.p
             {...entrance}
             transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.12, ease: 'easeOut' }}
-            className="mt-6 max-w-2xl text-base leading-7 text-white/82 sm:text-lg sm:leading-8"
+            className="mt-6 max-w-2xl text-base leading-7 text-white/[0.82] sm:text-lg sm:leading-8"
           >
             AvaanaSpace connects people, businesses, products, communities and opportunities across
             Zambia in one trusted digital ecosystem.
@@ -188,13 +188,13 @@ export function HeroSection() {
             </Link>
             <Link
               to="/app/search?type=opportunities"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/12 px-6 py-3 text-sm font-semibold text-white shadow-soft backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/20"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/[0.12] px-6 py-3 text-sm font-semibold text-white shadow-soft backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/20"
             >
               Discover Opportunities <Compass className="h-4 w-4" aria-hidden="true" />
             </Link>
             <a
               href="#discover"
-              className="inline-flex min-h-12 items-center justify-center px-3 py-3 text-sm font-semibold text-white/85 underline-offset-4 transition-colors hover:text-white hover:underline"
+              className="inline-flex min-h-12 items-center justify-center px-3 py-3 text-sm font-semibold text-white/[0.85] underline-offset-4 transition-colors hover:text-white hover:underline"
             >
               How AvaanaSpace Works
             </a>
