@@ -3,13 +3,16 @@ import multer from 'multer';
 import { customAlphabet } from 'nanoid';
 import path from 'node:path';
 import fs from 'node:fs';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { authenticate } from '../../middleware/auth.js';
 import { ApiError } from '../../utils/apiError.js';
 import { ok } from '../../utils/http.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const uploadDir = path.resolve(__dirname, '../../../uploads');
+const uploadDir = process.env.VERCEL
+  ? path.join(os.tmpdir(), 'avaanaspace-uploads')
+  : path.resolve(__dirname, '../../../uploads');
 fs.mkdirSync(uploadDir, { recursive: true });
 
 const genName = customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 20);

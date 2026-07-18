@@ -10,7 +10,10 @@ export const getPool = () => {
     pool = new pg.Pool({
       connectionString: env.db.url,
       ssl: env.db.ssl ? { rejectUnauthorized: false } : false,
-      max: 10,
+      max: process.env.VERCEL ? 2 : 10,
+      idleTimeoutMillis: 10000,
+      connectionTimeoutMillis: 10000,
+      allowExitOnIdle: true,
     });
     pool.on('error', (err) => logger.error('Unexpected PG pool error', err.message));
     logger.info('PostgreSQL pool initialised');
