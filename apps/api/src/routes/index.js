@@ -10,6 +10,9 @@ import notificationsRoutes from '../modules/notifications/notifications.routes.j
 import analyticsRoutes from '../modules/analytics/analytics.routes.js';
 import adminRoutes from '../modules/admin/admin.routes.js';
 import uploadsRoutes from '../modules/uploads/uploads.routes.js';
+import { usingPostgres } from '../config/env.js';
+import { query } from '../db/pg.js';
+import { asyncHandler } from '../utils/http.js';
 
 const router = Router();
 
@@ -23,8 +26,18 @@ router.get('/', (_req, res) =>
   }),
 );
 
-router.get('/health', (_req, res) =>
-  res.json({ success: true, status: 'ok', uptime: process.uptime(), timestamp: new Date().toISOString() }),
+router.get(
+  '/health',
+  asyncHandler(async (_req, res) => {
+    if (usingPostgres) await query('SELECT 1');
+    res.json({
+      success: true,
+      status: 'ok',
+      database: usingPostgres ? 'postgresql' : 'in-memory',
+      uptime: process.uptime(),
+      timestamp: new Date().toISOString(),
+    });
+  }),
 );
 
 router.use('/auth', authRoutes);

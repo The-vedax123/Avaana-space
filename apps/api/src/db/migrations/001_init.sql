@@ -2,6 +2,7 @@
 -- Run with: npm run migrate  (requires DATABASE_URL)
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+CREATE EXTENSION IF NOT EXISTS "citext";
 
 DO $$ BEGIN
   CREATE TYPE user_role AS ENUM ('visitor','user','business_owner','admin','super_admin');
