@@ -7,7 +7,7 @@ import { AppShell } from './components/layout/AppShell.jsx';
 import { PageLoader } from './components/layout/PageLoader.jsx';
 
 const Landing = lazy(() => import('./pages/Landing.jsx'));
-const Login = lazy(() => import('./pages/auth/Login.jsx'));
+const Login = lazy(() => import('./pages/auth/LoginPage.jsx'));
 const Register = lazy(() => import('./pages/auth/Register.jsx'));
 const ForgotPassword = lazy(() => import('./pages/auth/ForgotPassword.jsx'));
 const ResetPassword = lazy(() => import('./pages/auth/ResetPassword.jsx'));
