@@ -95,6 +95,68 @@ html.dark {
   }
 }
 
+.hero-image-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 35, 48, 0.97) 0%,
+      rgba(4, 56, 72, 0.91) 35%,
+      rgba(5, 72, 88, 0.66) 65%,
+      rgba(3, 38, 50, 0.54) 100%
+    );
+}
+
+.hero-bottom-fade {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(244, 251, 253, 0.08) 76%,
+      rgba(244, 251, 253, 0.42) 100%
+    );
+}
+
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 12% 28%, rgba(114, 197, 213, 0.32) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.13), transparent 22%);
+  background-size: 22px 22px, auto;
+  mask-image: linear-gradient(to right, black, transparent 48%);
+}
+
+html.dark .hero-bottom-fade {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(14, 23, 38, 0.12) 76%,
+      rgba(14, 23, 38, 0.58) 100%
+    );
+}
+
+@media (max-width: 639px) {
+  .hero-image-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 35, 48, 0.96) 0%,
+        rgba(4, 56, 72, 0.91) 58%,
+        rgba(3, 38, 50, 0.74) 100%
+      );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
