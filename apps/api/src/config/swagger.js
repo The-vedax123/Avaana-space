@@ -108,5 +108,19 @@ export const swaggerSpec = {
     '/notifications': { get: { tags: ['Notifications'], summary: 'List notifications', responses: { 200: { description: 'OK' } } } },
     '/analytics/platform': { get: { tags: ['Analytics'], summary: 'Platform analytics (admin)', responses: { 200: { description: 'OK' } } } },
     '/admin/dashboard': { get: { tags: ['Admin'], summary: 'Admin dashboard (admin)', responses: { 200: { description: 'OK' } } } },
+    '/uploads': {
+      post: {
+        tags: ['Uploads'],
+        summary: 'Upload an image (max 5MB)',
+        requestBody: {
+          content: {
+            'multipart/form-data': {
+              schema: { type: 'object', properties: { file: { type: 'string', format: 'binary' } } },
+            },
+          },
+        },
+        responses: { 200: { description: 'OK' } },
+      },
+    },
   },
 };

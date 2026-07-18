@@ -9,6 +9,7 @@ import swaggerUi from 'swagger-ui-express';
 import { env } from './config/env.js';
 import { swaggerSpec } from './config/swagger.js';
 import apiRouter from './routes/index.js';
+import { uploadDirPath } from './modules/uploads/uploads.routes.js';
 import { globalLimiter } from './middleware/rateLimit.js';
 import { notFoundHandler, errorHandler } from './middleware/error.js';
 // Initialise the data layer (seeds the in-memory store on import).
@@ -52,6 +53,7 @@ export const createApp = () => {
   app.get('/api/docs.json', (_req, res) => res.json(swaggerSpec));
 
   app.use('/api/v1', apiRouter);
+  app.use('/uploads', express.static(uploadDirPath, { maxAge: '7d', immutable: true }));
 
   app.use(notFoundHandler);
   app.use(errorHandler);

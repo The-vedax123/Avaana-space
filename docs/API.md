@@ -74,6 +74,12 @@ httpOnly cookie and rotated via `POST /auth/refresh`.
 `DELETE /admin/users/:id` · `GET /admin/queues/:type` (`businesses`|`products`) ·
 `GET|POST /admin/reports` · `PATCH /admin/reports/:id` · `GET /admin/audit-logs`
 
+## Uploads
+
+`POST /uploads` — authenticated multipart upload (field name `file`). Accepts images only
+(jpeg, png, webp, gif, svg), max 5 MB. Returns `{ url, filename, size, mimetype }`; files are
+served from `/uploads/:filename`. In production, swap the disk storage for Supabase Storage.
+
 ## Query conventions
 
 Pagination & sorting on list endpoints: `?page=1&limit=20&sort=createdAt&order=desc&q=term`.

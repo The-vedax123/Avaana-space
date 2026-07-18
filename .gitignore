@@ -36,3 +36,6 @@ coverage/
 *.pem
 .cache/
 tmp/
+
+# runtime uploads
+apps/api/uploads/

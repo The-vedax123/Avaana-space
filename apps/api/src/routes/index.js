@@ -9,6 +9,7 @@ import discoveryRoutes from '../modules/discovery/discovery.routes.js';
 import notificationsRoutes from '../modules/notifications/notifications.routes.js';
 import analyticsRoutes from '../modules/analytics/analytics.routes.js';
 import adminRoutes from '../modules/admin/admin.routes.js';
+import uploadsRoutes from '../modules/uploads/uploads.routes.js';
 
 const router = Router();
 
@@ -36,5 +37,6 @@ router.use('/discovery', discoveryRoutes);
 router.use('/notifications', notificationsRoutes);
 router.use('/analytics', analyticsRoutes);
 router.use('/admin', adminRoutes);
+router.use('/uploads', uploadsRoutes);
 
 export default router;
