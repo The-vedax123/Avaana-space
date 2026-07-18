@@ -128,7 +128,7 @@ export function HeroSection() {
         aria-hidden="true"
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 h-full w-full scale-[1.01] object-cover object-[58%_center] opacity-[0.56] blur-[0.5px] sm:opacity-[0.62] md:scale-100 md:object-[center_45%] md:opacity-[0.66] md:blur-0 lg:opacity-[0.68]"
+        className="absolute inset-0 h-full w-full scale-[1.01] object-cover object-[88%_center] opacity-[0.56] blur-[0.5px] sm:object-[68%_center] sm:opacity-[0.62] md:scale-100 md:object-[center_45%] md:opacity-[0.66] md:blur-0 lg:opacity-[0.68]"
       />
 
       <div className="hero-image-overlay absolute inset-0" aria-hidden="true" />
