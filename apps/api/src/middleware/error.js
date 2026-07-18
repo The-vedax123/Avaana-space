@@ -6,7 +6,6 @@ export const notFoundHandler = (req, _res, next) => {
   next(ApiError.notFound(`Route not found: ${req.method} ${req.originalUrl}`));
 };
 
-// eslint-disable-next-line no-unused-vars
 export const errorHandler = (err, _req, res, _next) => {
   const statusCode = err.statusCode || 500;
   const isServerError = statusCode >= 500;

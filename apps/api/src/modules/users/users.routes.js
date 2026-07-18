@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { usersRepository } from './users.repository.js';
-import { asyncHandler, ok, parseQuery, paginate } from '../../utils/http.js';
+import { asyncHandler, ok } from '../../utils/http.js';
 import { authenticate } from '../../middleware/auth.js';
 import { validate } from '../../middleware/validate.js';
 import { ApiError } from '../../utils/apiError.js';

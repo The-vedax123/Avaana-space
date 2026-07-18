@@ -6,7 +6,6 @@ const ts = () => new Date().toISOString();
 const log = (level, ...args) => {
   if (levels[level] > current) return;
   const line = `[${ts()}] ${level.toUpperCase()}`;
-  // eslint-disable-next-line no-console
   console[level === 'debug' ? 'log' : level](line, ...args);
 };
 

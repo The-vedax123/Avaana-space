@@ -2,7 +2,7 @@ import { db } from '../../db/store.js';
 
 const publicView = (u) => {
   if (!u) return null;
-  const { passwordHash, ...rest } = u;
+  const { passwordHash: _passwordHash, ...rest } = u;
   return rest;
 };
 
