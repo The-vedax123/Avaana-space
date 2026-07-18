@@ -5,7 +5,7 @@
 | Component | Recommended host |
 | --- | --- |
 | Web (`apps/web`) | Vercel (static + SPA) |
-| API (`api/[...path].js`) | Vercel Function (same-origin) |
+| API (`api/index.js`) | Vercel Function (same-origin) |
 | Database & Storage | Supabase (PostgreSQL + Storage) |
 | CDN / DNS | Cloudflare |
 

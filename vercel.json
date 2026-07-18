@@ -5,13 +5,17 @@
   "outputDirectory": "apps/web/dist",
   "framework": null,
   "functions": {
-    "api/**/*.js": {
+    "api/index.js": {
       "maxDuration": 10
     }
   },
   "rewrites": [
     {
-      "source": "/((?!api/.*).*)",
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
